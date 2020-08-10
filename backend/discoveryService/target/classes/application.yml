@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: registryService
+
+    
+server:
+  port: 8001
+
+#  Eureka Config
+eureka:
+  server:
+    enable-self-preservation: false
+  client:
+    fetch-registry: false
+    register-with-eureka: false
