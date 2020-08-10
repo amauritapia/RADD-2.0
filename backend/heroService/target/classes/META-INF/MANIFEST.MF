@@ -1,6 +1,11 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Implementation-Title: heroService
 Implementation-Version: 0.0.1-SNAPSHOT
 Build-Jdk-Spec: 1.8
+=======
+Built-By: danie
+Build-Jdk: 1.8.0_202
+>>>>>>> 4b48f1f1977c4a6ccfe75e9e704bfc4bbf89efbb
 Created-By: Maven Integration for Eclipse
 

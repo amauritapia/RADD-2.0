@@ -1,12 +1,10 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=1b1353d49824b06319a89fe4497fbbf12e1422f1
 eclipse.preferences.version=1
 org.eclipse.jdt.core.compiler.codegen.methodParameters=generate
-<<<<<<< HEAD
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
 org.eclipse.jdt.core.compiler.compliance=1.8
-=======
-org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.5
-org.eclipse.jdt.core.compiler.compliance=1.5
->>>>>>> 1b1353d49824b06319a89fe4497fbbf12e1422f1
 org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures=disabled
 org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
 org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures=ignore
