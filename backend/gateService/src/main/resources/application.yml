@@ -12,4 +12,10 @@ zuul:
     connect-timeout-millis: 10000
     socket-timeout-millis: 10000
     connection-request-timeout-millis: 10000
+  routes:
+    data: 
+      path: /
+      service-id: Hero-Service
+    
+     
   

@@ -4,7 +4,8 @@ server:
     
  # connect to database
 spring:
-  application:    name: Hero Service  datasource:    url: jdbc:postgresql://java-react-200526.cynb2exc9xns.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=public
+  application:    name: Hero-Service
+      datasource:    url: jdbc:postgresql://java-react-200526.cynb2exc9xns.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=public
     username: postgresLogin
     password: passwordplop
   jpa:
