@@ -1,21 +1,0 @@
-server:
-  port: 8111
-spring:  application:    name: gatewayservice
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
-
-zuul:
-  host:
-    connect-timeout-millis: 10000
-    socket-timeout-millis: 10000
-    connection-request-timeout-millis: 10000
-  routes:
-    data: 
-      path: /
-      service-id: Hero-Service
-    
-     
-  
