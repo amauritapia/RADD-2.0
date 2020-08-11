@@ -1,4 +1,4 @@
-spring:
+Bspring:
   application:
     name: registryService
 
