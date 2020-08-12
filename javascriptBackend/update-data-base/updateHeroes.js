@@ -24,7 +24,6 @@ httpsReq("get","/api/constants/heroes")
 function task(hero,i,abilities)
 {
   setTimeout(()=>{
-   // console.log(hero)
       let splittedName=hero.name.split("_")
 
       //This will store the info of the all the name of a hero
@@ -33,11 +32,8 @@ function task(hero,i,abilities)
       {
         heroNameInfo.push(splittedName[i])
       }
-      //console.log(heroNameInfo)
+ 
 
-
-      //console.log(heroNameInfo)
-    
     //Get all of the heroes abilities
     let abilitieHeroNames=Object.keys(abilities);
     let currentName;
@@ -60,8 +56,8 @@ function task(hero,i,abilities)
         {
           if(j==heroNameInfo.length-1)
           {
-            allHerosAbilities.push(abilities[abilitieHeroNames[i]].dname)
-            //console.log(abilities[abilitieHeroNames[i]].dname)
+            allHerosAbilities.push(abilities[abilitieHeroNames[i]])
+    
            
           }
         }
@@ -71,19 +67,12 @@ function task(hero,i,abilities)
         }
       }
     }
-    allHerosAbilities.push("Hero Name: "+hero.localized_name)
-    if(hero.localized_name=="Sand King")
-    {
-      console.log(allHerosAbilities.length)
-    }
-    if(allHerosAbilities.length>8)
-    {
-      console.log(hero.localized_name+ ": "+allHerosAbilities.length)
-    }
-    //console.log(allHerosAbilities)
-
+    
+    //Abilities and their associated hero
+    console.log(allHerosAbilities)
+    console.log(hero.localized_name)
 
       //queryDB("INSERT INTO raddtwo.dota_stage VALUES()").then(data=>{console.log(data)});
-  },100*i)
+  },2000*i)
 }
 
