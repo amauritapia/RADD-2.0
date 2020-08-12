@@ -1,4 +1,4 @@
-package heroService.controller;
+package com.radd.controllers;
 
 import java.util.List;
 
@@ -8,37 +8,35 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import heroService.models.Attributes;
-import heroService.models.Hero;
-import heroService.repository.HeroRepo;
+import com.radd.models.Attributes;
+import com.radd.models.Hero;
+import com.radd.repositories.HeroRepo;
+import com.radd.services.heroService;
 
 @RequestMapping("hero/")
 @RestController
 public class heroController {
 
 	@Autowired
-	HeroRepo hr;
-	
+	heroService hs;
+
 	@GetMapping()
-	List<Hero> getAllHeroes(){
-		return hr.findAll();
+	List<Hero> getAllHeroes() {
+		return hs.getAll();
 	}
-	
+
 	@GetMapping("{id}")
 	Hero findByHeroId(@PathVariable int id) {
-		return hr.findById(id).get();
+		return hs.byId(id);
 	}
-	
+
 	@GetMapping("atribute/{atri}")
 	List<Hero> findHeroByAttribute(@PathVariable String atri) {
-		Attributes ta = new Attributes();
-		ta.setId(0000);
-		ta.setAttribute(atri);
-		return hr.findHeroByAtribute(ta);
+		return hs.byAttribute(atri);
 	}
-	
+
 	@GetMapping("name/{name}")
 	Hero findByHeroName(@PathVariable String heroName) {
-		return hr.findHeroByName(heroName);
+		return hs.byName(heroName);
 	}
 }

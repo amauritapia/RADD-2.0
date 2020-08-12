@@ -1,4 +1,4 @@
-package heroService.models;
+package com.radd.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

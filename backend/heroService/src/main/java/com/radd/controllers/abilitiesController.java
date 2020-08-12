@@ -1,4 +1,4 @@
-package heroService.controller;
+package com.radd.controllers;
 
 import java.util.List;
 
@@ -8,23 +8,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import heroService.models.Abilities;
-import heroService.repository.AbilitiesRepo;
+import com.radd.models.Abilities;
+import com.radd.repositories.AbilitiesRepo;
+import com.radd.services.abilitiesService;
 
 @RequestMapping("abilities/")
 @RestController
 public class abilitiesController {
 
 	@Autowired
-	AbilitiesRepo ar;
+	abilitiesService as;
 	
 	@GetMapping("id/{id}")
 	Abilities findAbilityById(@PathVariable int id) {
-		return ar.findById(id).get();
+		return as.byId(id);
 	}
 	
 	@GetMapping("hero/{name}")
 	List<Abilities> findByHeroId(@PathVariable int heroID){
-		return ar.findAbilitiesById(heroID);
+		return as.byHero(heroID);
 	}
 }
