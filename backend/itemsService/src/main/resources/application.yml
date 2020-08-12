@@ -1,0 +1,22 @@
+server:
+  port: 8015
+  servlet:
+    context-path: /
+    
+ # connect to database
+spring:
+  application:
+    name: Items-Service
+    
+  datasource:
+    url: jdbc:postgresql://java-react-200526.cynb2exc9xns.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=public
+    username: postgresLogin
+    password: passwordplop
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      show-sql: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
