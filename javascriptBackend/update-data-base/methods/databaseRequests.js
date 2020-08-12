@@ -1,4 +1,6 @@
 const { Client,QueryArrayResult } = require('pg')
+let https = require('https');
+
 const connection=
 {
     user:"postgresLogin",//process.env.DB_LOGIN
@@ -7,6 +9,9 @@ const connection=
     port:5432,//process.env.PORT_NAME
     database:"postgres" //process.env.DB_NAME
 };
+
+
+
 async function queryDB(sent, search="")
 {
     
@@ -30,7 +35,6 @@ async function queryDB(sent, search="")
     sql.end();
     return results.rows;
 }
-queryDB("SELECT * from radd.dota_stage").then(data=>{console.log(data)})
 
 
 
