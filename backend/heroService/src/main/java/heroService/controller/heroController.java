@@ -19,6 +19,11 @@ public class heroController {
 	@Autowired
 	HeroRepo hr;
 	
+	@GetMapping()
+	List<Hero> getAllHeroes(){
+		return hr.findAll();
+	}
+	
 	@GetMapping("{id}")
 	Hero findByHeroId(@PathVariable int id) {
 		return hr.findById(id).get();
