@@ -103,6 +103,7 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+.mvn/*
 
 ### FROM SPRING BOOT STARTER:
 
