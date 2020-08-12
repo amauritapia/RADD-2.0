@@ -104,6 +104,8 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/*
+mvnw
+mvnw.cmd
 
 ### FROM SPRING BOOT STARTER:
 
