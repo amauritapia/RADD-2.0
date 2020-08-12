@@ -15,7 +15,19 @@ public class Attributes {
 	
 @Id
 private int Id;
-
-
 private String attribute;
+
+public int getId() {
+	return Id;
+}
+public void setId(int id) {
+	Id = id;
+}
+public String getAttribute() {
+	return attribute;
+}
+public void setAttribute(String attribute) {
+	this.attribute = attribute;
+}
+
 }
