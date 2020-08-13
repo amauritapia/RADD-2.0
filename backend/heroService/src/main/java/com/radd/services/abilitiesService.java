@@ -17,6 +17,6 @@ AbilitiesRepo ar;
  }
  
  public List<Abilities> byHero(int heroID){
-	 return ar.findAbilitiesById(heroID);
+	 return ar.findAbilitiesByheroId(heroID);
  }
 }

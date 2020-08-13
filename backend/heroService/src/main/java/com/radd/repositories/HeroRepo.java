@@ -10,7 +10,7 @@ import com.radd.models.Hero;
 
 @Repository
 public interface HeroRepo extends JpaRepository<Hero, Integer> {
-	List<Hero> findHeroByAtribute(Attributes atri);
+	List<Hero> findHeroByattribute(Attributes atri);
 
 	Hero findHeroByName(String name);
 }

@@ -9,5 +9,5 @@ import com.radd.models.Abilities;
 @Repository
 public interface AbilitiesRepo extends JpaRepository<Abilities, Integer> {
 	
-	List<Abilities> findAbilitiesById(int heroId);
+	List<Abilities> findAbilitiesByheroId(int heroId);
 }

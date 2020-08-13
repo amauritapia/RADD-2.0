@@ -24,9 +24,23 @@ public class heroService {
 
 	public List<Hero> byAttribute(String atri) {
 		Attributes ta = new Attributes();
-		ta.setId(0000);
-		ta.setAttribute(atri);
-		return hr.findHeroByAtribute(ta);
+		switch (atri) {
+		case "str":
+			ta.setAttribute(atri);
+			ta.setId(1);
+			break;
+		case "agi:":
+			ta.setAttribute(atri);
+			ta.setId(2);
+			break;
+		case "int":
+			ta.setAttribute(atri);
+			ta.setId(3);
+			break;
+		default:
+			break;
+		}
+		return hr.findHeroByattribute(ta);
 	}
 
 	public Hero byName(String name) {
