@@ -24,7 +24,7 @@ public class abilitiesController {
 		return as.byId(id);
 	}
 	
-	@GetMapping("hero/{name}")
+	@GetMapping("hero/{heroID}")
 	List<Abilities> findByHeroId(@PathVariable int heroID){
 		return as.byHero(heroID);
 	}
