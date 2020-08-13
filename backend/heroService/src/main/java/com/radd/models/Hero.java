@@ -34,9 +34,9 @@ private int baseStr;
 private int baseAgi;
 private int baseInt;
 //stat gains
-private int strGain;
-private int agiGain;
-private int intGain;
+private double strGain;
+private double agiGain;
+private double intGain;
 //other
 private String iconUrl;
 private String imageUrl;
