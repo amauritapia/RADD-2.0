@@ -77,17 +77,56 @@ async function task(hero,i,abilities)
     
     //Insert heroes into database
 
+    //add hero to database
 
-
-    
+    // {
+    //   id: 129,
+    //   name: 'npc_dota_hero_mars',
+    //   localized_name: 'Mars',
+    //   primary_attr: 'str',
+    //   attack_type: 'Melee',
+    //   roles: [ 'Carry', 'Initiator', 'Disabler', 'Durable' ],
+    //   img: '/apps/dota2/images/heroes/mars_full.png?',
+    //   icon: '/apps/dota2/images/heroes/mars_icon.png',
+    //   base_health: 200,
+    //   base_health_regen: null,
+    //   base_mana: 75,
+    //   base_mana_regen: 0,
+    //   base_armor: -1,
+    //   base_mr: 25,
+    //   base_attack_min: 29,
+    //   base_attack_max: 37,
+    //   base_str: 23,
+    //   base_agi: 20,
+    //   base_int: 17,
+    //   str_gain: 3.4,
+    //   agi_gain: 1.9,
+    //   int_gain: 1.4,
+    //   attack_range: 250,
+    //   projectile_speed: 900,
+    //   attack_rate: 1.8,
+    //   move_speed: 310,
+    //   turn_rate: 0.8,
+    //   cm_enabled: true,
+    //   legs: 2
+    // }
+    let h=hero;    
+    let storedHero=[h.id,h.agi_gain,h.attack_range,
+    h.base_agi,Math.round(h.base_armor),Math.round((h.base_attack_min+h.base_attack_max)/2),
+    h.base_health,h.base_int,h.base_mana,
+    h.move_speed, h.base_str, h.icon,
+    h.img, h.int_gain, h.localized_name,
+    h.name,h.str_gain, (attributesNames.indexOf(h.primary_attr)+1)];
+    queryDB(`INSERT INTO raddtwo.hero (id,agi_gain,attack_range,base_agi,base_armour,base_dmg,base_health,base_int,base_mana,base_speed,base_str,icon_url,image_url,int_gain,localized_name,"name",str_gain,"attribute") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18);`,storedHero);
+  
     currentHeroNumber++;
     //Enter this if statement if your all done loading in heroes and all abilities are loaded into array
     if(currentHeroNumber==maxHeroSize)
     {
-      console.log(allAbilities)
+      //console.log(allAbilities)
     }
       //queryDB("INSERT INTO raddtwo.dota_stage VALUES()").then(data=>{console.log(data)});
-  },1*timeIncrementer)
+  },i*timeIncrementer)
 }
 
 //nukes all the tables in the proper order
