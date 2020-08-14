@@ -3,6 +3,7 @@ package com.radd.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ import com.radd.models.Attributes;
 import com.radd.models.Hero;
 import com.radd.repositories.HeroRepo;
 import com.radd.services.heroService;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("hero/")
 @RestController
 public class heroController {

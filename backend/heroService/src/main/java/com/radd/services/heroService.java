@@ -29,7 +29,7 @@ public class heroService {
 			ta.setAttribute(atri);
 			ta.setId(1);
 			break;
-		case "agi:":
+		case "agi":
 			ta.setAttribute(atri);
 			ta.setId(2);
 			break;
