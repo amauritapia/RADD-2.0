@@ -4,7 +4,7 @@ let {queryDB, httpsReq, delay} = require('./methods/databaseRequests');
 let allAbilities=[];
 let maxHeroSize=0;
 let currentHeroNumber=-1;
-const timeIncrementer=1;
+const timeIncrementer=300;
 let attributesNames=["str","agi","int"];
 
 function loadHeroesAndAbilities()
@@ -85,14 +85,12 @@ async function task(hero,i,abilities)
     h.move_speed, h.base_str, h.icon,
     h.img, h.int_gain, h.localized_name,
     h.name,h.str_gain, (attributesNames.indexOf(h.primary_attr)+1)];
-    //queryDB(`INSERT INTO raddtwo.hero (id,agi_gain,attack_range,base_agi,base_armour,base_dmg,base_health,base_int,base_mana,base_speed,base_str,icon_url,image_url,int_gain,localized_name,"name",str_gain,"attribute") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18);`,storedHero);
+    queryDB(`INSERT INTO raddtwo.hero (id,agi_gain,attack_range,base_agi,base_armour,base_dmg,base_health,base_int,base_mana,base_speed,base_str,icon_url,image_url,int_gain,localized_name,"name",str_gain,"attribute") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18);`,storedHero);
   
     currentHeroNumber++;
     //Enter this if statement if your all done loading in heroes and all abilities are loaded into array
     if(currentHeroNumber==maxHeroSize)
     {
-      console.log(allAbilities[allAbilities.length-1])
-      
       for(let p=0;p<allAbilities.length;p++)
       {
         setTimeout(()=>
@@ -113,7 +111,7 @@ async function task(hero,i,abilities)
                             true,false,c.bkbpierce,//active skill, ags
                             cooldown,c.desc,c.dmg_type,
                             c.img,manaCost,c.heroId]
-          //queryDB(`INSERT INTO raddtwo.abilities (ability_id,ability_behavior,ability_name,active_skill,ags_skill,bkb_pierce,cool_down,description,dmg_type,image_url,mana_cost,id)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12);`,singleAbility)
+          queryDB(`INSERT INTO raddtwo.abilities (ability_id,ability_behavior,ability_name,active_skill,ags_skill,bkb_pierce,cool_down,description,dmg_type,image_url,mana_cost,id)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12);`,singleAbility)
         },p*timeIncrementer)
       }
 
