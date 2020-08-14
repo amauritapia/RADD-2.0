@@ -112,6 +112,11 @@ async function task(hero,i,abilities)
                             cooldown,c.desc,c.dmg_type,
                             c.img,manaCost,c.heroId]
           queryDB(`INSERT INTO raddtwo.abilities (ability_id,ability_behavior,ability_name,active_skill,ags_skill,bkb_pierce,cool_down,description,dmg_type,image_url,mana_cost,id)VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12);`,singleAbility)
+
+          //IF WANT TO ADD ANYTHING RELATED TO HEROES ADD IT HERE-------------------------------------------------------------------------------------------
+
+
+          /////////////////////////////////////////////////////////////-----------------------------------------
         },p*timeIncrementer)
       }
 
