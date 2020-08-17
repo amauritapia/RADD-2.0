@@ -2,13 +2,14 @@ const axios = require("axios");
 const fs = require("fs");
 
 async function getItems(){
-    return await axios.get("https://api.pandascore.co/dota2/items/?range[id]=1,100&per_page=100&token=nPbfyNrliDhjXrJisutMh5Dw5oYctBTHStEtLIN_UrlDC9-id_I")
+    return await axios.get("https://api.opendota.com/api/scenarios/itemTimings")
     .then(function (response){
         data = response.data;
-        console.log(data[99].name)
-        fs.writeFile('/home/amauri-tapia/Desktop/test.csv', data.id,(err) =>{
+        //console.log(data);
+        for(i=0; i< data.length;i++){
+        fs.appendFile('/home/amauri-tapia/Desktop/test.csv',data[i].hero_id + "," + data[i].item + "\r\n",(err) =>{
             if(err) throw err;
-        })
+        })}
     }).catch(function (error){
         console.log(error)
     })
