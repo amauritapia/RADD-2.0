@@ -9,18 +9,26 @@ async function getItems(){
         
     for(name in data){
     if(data[name].dname == undefined){
-        fs.appendFileSync('/home/amauri-tapia/Desktop/test-2.csv',data[name].id + "," + "N/A" + "," + data[name].cost + "," + data[name].img + "\r\n",(err) =>{
+        fs.appendFileSync('/home/amauri-tapia/Desktop/items.csv',data[name].id + "\t" + "N/A" + "\t" + data[name].cost + "\t" + data[name].img + "\r\n",(err) =>{
             if(err) throw err;
                 })
 }   else{
         if(data[name].cost == null){
-        fs.appendFileSync('/home/amauri-tapia/Desktop/test-2.csv',data[name].id + "," + data[name].dname + "," + "N/A" + "," + data[name].img + "\r\n",(err) =>{
+        fs.appendFileSync('/home/amauri-tapia/Desktop/items.csv',data[name].id + "\t" + data[name].dname + "\t" + 0 + "\t" + data[name].img  + "\r\n",(err) =>{
             if(err) throw err;
                 })
 }   else{
-        fs.appendFileSync('/home/amauri-tapia/Desktop/test-2.csv',data[name].id + "," + data[name].dname + "," + data[name].cost + "," + data[name].img + "\r\n",(err) =>{
+        if(data[name].lore == ""){
+        fs.appendFileSync('/home/amauri-tapia/Desktop/items.csv',data[name].id + "\t" + data[name].dname + "\t" + data[name].cost + "\t" + data[name].img 
+         + "\r\n",(err) =>{
             if(err) throw err;
                 })
+        } else{
+            fs.appendFileSync('/home/amauri-tapia/Desktop/items.csv',data[name].id + "\t" + data[name].dname + "\t" + data[name].cost + "\t" + data[name].img 
+            + "\r\n",(err) =>{
+                if(err) throw err;
+                    })
+        }
 }
 }
     
